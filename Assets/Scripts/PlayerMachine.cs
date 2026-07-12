@@ -21,8 +21,8 @@ public class PlayerMachine : MonoBehaviour
              * 
              */
         }
+
         
-        //コミットテスト
-        //３回目の変更
+        
     }
 }
