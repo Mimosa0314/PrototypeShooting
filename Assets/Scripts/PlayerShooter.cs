@@ -3,7 +3,7 @@ using UnityEngine;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [SerializeField] private PlayerBullet playerBullet;
-
+    [SerializeField] private GameObject bullet;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Vector2 playerPos = transform.position;
-            playerBullet.Firing(playerPos);   
+            Instantiate(bullet, playerPos, Quaternion.identity);
         }
     }
 }

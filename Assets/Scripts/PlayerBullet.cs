@@ -20,13 +20,7 @@ public class PlayerBullet : MonoBehaviour
         /*’e‚Ì‹““®
          * í‚Éˆê’è•ûŒü‚Éˆ—‚·‚é
          */
-        Vector2 bulletPos = transform.position;
+        transform.position += Vector3.up * bulletSpeed * Time.deltaTime;
 
-    }
-
-    //’e‚Ì”­Ë
-    public void Firing(Vector2 pos)
-    {
-        Instantiate(bullet, pos, Quaternion.identity);
     }
 }
