@@ -23,4 +23,15 @@ public class PlayerBullet : MonoBehaviour
         transform.position += Vector3.up * bulletSpeed * Time.deltaTime;
 
     }
+
+
+    /*
+     * 画面外に出たらオブジェクトを破棄
+     * 条件をつけず出た時点で即破棄（試作）
+     */
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
+
 }

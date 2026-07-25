@@ -17,6 +17,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Vector2 playerPos = transform.position;
+            playerPos.y += 1.0f;
             Instantiate(bullet, playerPos, Quaternion.identity);
         }
     }
