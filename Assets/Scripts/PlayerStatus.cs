@@ -15,18 +15,25 @@ public class PlayerMachine : MonoBehaviour
         
     }
 
-    /*“G’e‚Æ‚ÌÚG”»’è
-     * 
+    /*
+     *“G’e‚Æ‚ÌÚG”»’è 
      */
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
         if(collision.gameObject.tag == "enemyBullet")
         {
-            //‘Ì—Í‚ğ0‚É‚·‚é
-            life = 0;
-            Debug.Log("“G’e‚ÆÚGA€–S‚µ‚Ü‚µ‚½");
+            Death();
         }
     }
 
+    /*
+     * €–S
+     */
+    void Death()
+    {
+        //‘Ì—Í‚ğ0‚É‚·‚é
+        life = 0;
+        Debug.Log("“G’e‚ÆÚGA€–S‚µ‚Ü‚µ‚½");
+    }
 }
