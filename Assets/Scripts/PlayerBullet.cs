@@ -17,7 +17,8 @@ public class PlayerBullet : MonoBehaviour
 
     void Update()
     {
-        /*’e‚Ì‹““®
+        /*
+         * ’e‚Ì‹““®
          * í‚Éˆê’è•ûŒü‚Éˆ—‚·‚é
          */
         transform.position += Vector3.up * bulletSpeed * Time.deltaTime;

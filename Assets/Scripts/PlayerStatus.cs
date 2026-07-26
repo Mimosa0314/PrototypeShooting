@@ -15,13 +15,14 @@ public class PlayerMachine : MonoBehaviour
         
     }
 
-    /*
-     *“G’e‚Æ‚ÌÚG”»’è 
-     */
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if(collision.gameObject.tag == "enemyBullet")
+
+        /*
+         *“G’e‚Æ‚ÌÚG”»’è 
+         */
+        if (collision.gameObject.tag == "enemyBullet")
         {
             Death();
         }
