@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMachine : MonoBehaviour
 {
-    //“G‚Ì‘Ì—Í‚Æ‚©‚ ‚é‚â‚Â
+    //“G‚Ì‘Ì—Í‚Æ‚©‚ ‚é‚â‚Â da
     //[SerializeField] private Enemy enemy; 
 
     public void TakeDamage()
