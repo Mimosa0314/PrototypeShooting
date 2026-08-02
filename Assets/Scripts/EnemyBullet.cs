@@ -10,7 +10,7 @@ public class EnemyBullet : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
