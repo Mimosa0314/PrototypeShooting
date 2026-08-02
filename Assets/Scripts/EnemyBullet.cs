@@ -4,7 +4,7 @@ public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     private bool isMoving = false;
-    // tart is called once before the first execution of Update after the MonoBehaviour is created
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
