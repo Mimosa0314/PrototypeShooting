@@ -30,14 +30,14 @@ public class EnemyBullet : MonoBehaviour
             other.gameObject.name
         );
 
-        PlayerMachine playerMachine =
-            other.GetComponentInParent<PlayerMachine>();
+        PlayerStatus playerStatus =
+            other.GetComponentInParent<PlayerStatus>();
 
-        if (playerMachine == null)
+        if (playerStatus == null)
         {
             return;
         }
 
-        playerMachine.TakeDamage();
+        playerStatus.TakeDamage();
     }
 }

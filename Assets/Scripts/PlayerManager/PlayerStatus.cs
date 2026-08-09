@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMachine : MonoBehaviour
+public class PlayerStatus : MonoBehaviour
 {
     private int life = 1;
 
@@ -24,14 +24,14 @@ public class PlayerMachine : MonoBehaviour
          */
         if (collision.gameObject.tag == "enemyBullet")
         {
-            Death();
+            TakeDamage();
         }
     }
 
     /*
      * Ž€–S
      */
-    void Death()
+    public void TakeDamage()
     {
         //‘Ì—Í‚ð0‚É‚·‚é
         life = 0;
