@@ -1,18 +1,12 @@
 using UnityEngine;
 
-public class PlayerMachine : MonoBehaviour
+public class PlayerStatus: MonoBehaviour
 {
     private int life = 1;
-
-
-    void Start()
+   
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        Debug.Log("PlayerStatus‘¤‚ÅÚG‚ğŒŸ’m‚µ‚Ü‚µ‚½");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -28,6 +22,7 @@ public class PlayerMachine : MonoBehaviour
         }
     }
 
+    
     /*
      * €–S
      */
@@ -37,8 +32,5 @@ public class PlayerMachine : MonoBehaviour
         life = 0;
         Debug.Log("“G’e‚ÆÚGA€–S‚µ‚Ü‚µ‚½");
     }
-    public void TakeDamage()
-    {
-        Debug.Log("ƒvƒŒƒCƒ„[‚ªUŒ‚‚ğó‚¯‚Ü‚µ‚½");@
-    }
+    
 }
