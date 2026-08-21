@@ -13,7 +13,7 @@ public class PlayerStatus: MonoBehaviour
     {
 
 
-        /*a
+        /*
          *“G’e‚Æ‚ÌÚG”»’è 
          */
         if (collision.gameObject.tag == "enemyBullet")
