@@ -11,7 +11,7 @@ public class EnemyBullet : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
         
-    // Update is called once per frame
+    // Update is called once per framea
     private void Update()
     {
         if (!isMoving && Input.GetKeyDown(KeyCode.Space))
