@@ -35,11 +35,4 @@ public class PlayerBullet : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    /*
-     * 敵に弾が当たった時
-     */
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //敵スクリプトの呼び出し
-    }
 }

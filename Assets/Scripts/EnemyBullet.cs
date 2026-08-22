@@ -3,41 +3,40 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private Transform player;
     private bool isMoving = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Vector3 direction;
 
-    // Update is called once per frame
-    void Update()
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+        
+    // Update is called once per framea
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isMoving && Input.GetKeyDown(KeyCode.Space))
         {
+            Direction();
             isMoving = true;
         }
 
         if (isMoving)
         {
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            transform.position += 
+                direction * moveSpeed * Time.deltaTime;
         }
-    }
-    private void OnTriggerEnter2D(Collider2D other)
+    
+}
+    private void Direction()
     {
-        Debug.Log(
-            "EnemyBulletÇ™ê⁄êGÇµÇ‹ÇµÇΩÅBê⁄êGëäéËÅF" +
-            other.gameObject.name
-        );
-
-        PlayerStatus playerStatus =
-            other.GetComponentInParent<PlayerStatus>();
-
-        if (playerStatus == null)
-        {
-            return;
-        }
-
-        playerStatus.TakeDamage();
+        direction =
+        (player.position - transform.position).normalized;
     }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+
+
 }
