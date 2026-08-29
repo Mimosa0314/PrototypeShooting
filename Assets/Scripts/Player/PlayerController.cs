@@ -31,20 +31,20 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        Vector3 buttonLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
 
         if (playerCollider.bounds.max.y >= topRight.y && y > 0)
         {
 
-            if(playerCollider.bounds.min.x <= buttonLeft.x && x < 0)
+            if(playerCollider.bounds.min.x <= bottomLeft.x && x < 0)
             {
                 /*
                  * ¶ã‚©‚Â¶“ü—Í‚Ìê‡ˆÚ“®‚³‚¹‚È‚¢
                  */
 
-            }else if(playerCollider.bounds.min.x <= buttonLeft.x && x > 0)
+            }else if(playerCollider.bounds.min.x <= bottomLeft.x && x > 0)
             {
                 /*
                  * ¶ã‚©‚Â‰E“ü—Í‚Ìê‡
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        else if (playerCollider.bounds.min.y <= buttonLeft.y && y < 0 )
+        else if (playerCollider.bounds.min.y <= bottomLeft.y && y < 0 )
         {
             /*
              * ‰æ–Ê‰º’[‚Å‚Í‰º“ü—Í‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             Vector3 move = new Vector3(x, 0, 0);
             transform.position += move * moveSpeed * Time.deltaTime;
         }
-        else if (playerCollider.bounds.min.x <= buttonLeft.x && x < 0)
+        else if (playerCollider.bounds.min.x <= bottomLeft.x && x < 0)
         {
             /*
              * ‰æ–Ê¶’[‚Å‚Í¶“ü—Í‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é
