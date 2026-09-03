@@ -11,15 +11,6 @@ public class PlayerStatus: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-
-        /*a
-         *“G’e‚Æ‚ÌÚG”»’è 
-         */
-        if (collision.gameObject.tag == "enemyBullet")
-        {
-            TakeDamage();
-        }
     }
 
     

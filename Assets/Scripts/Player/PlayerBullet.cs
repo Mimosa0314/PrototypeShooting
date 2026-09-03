@@ -4,6 +4,8 @@ public class PlayerBullet : MonoBehaviour
 {
 
     [SerializeField] private GameObject bullet;
+    [SerializeField] private EnemyStatus enemyStatus;
+
     private float bulletSpeed = 5f;
 
     public PlayerBullet()
@@ -23,6 +25,17 @@ public class PlayerBullet : MonoBehaviour
          */
         transform.position += Vector3.up * bulletSpeed * Time.deltaTime;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        /*
+         * ’e‚ª“G‹@‚ÉÕ“Ë‚µ‚½‚çŒÄ‚Ño‚µ
+         */
+        if(collision.gameObject.tag == "enemy")
+        {
+            enemyStatus.TakeDamage();
+        }
     }
 
 
