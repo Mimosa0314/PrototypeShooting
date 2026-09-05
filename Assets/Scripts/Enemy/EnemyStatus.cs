@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EnemyStatus : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private int life = 1;
     void Start()
     {
         
@@ -16,6 +17,18 @@ public class EnemyStatus : MonoBehaviour
 
     public void TakeDamage()
     {
+        life --;
 
+        if(life == 0)
+        {
+            Death();
+        }
     }
+
+    void Death()
+    {
+        Destroy(gameObject);
+    }
+
+
 }
