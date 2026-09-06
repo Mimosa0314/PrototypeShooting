@@ -8,10 +8,14 @@ public class PlayerBullet : MonoBehaviour
 
     private float bulletSpeed = 5f;
 
-    public PlayerBullet()
-    {
+    private Rigidbody2D rb;
 
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();   
     }
+
     void Start()
     {
         
@@ -23,8 +27,10 @@ public class PlayerBullet : MonoBehaviour
          * ’e‚Ì‹““®
          * í‚Éˆê’è•ûŒü‚Éˆ—‚·‚é
          */
-        transform.position += Vector3.up * bulletSpeed * Time.deltaTime;
-
+        rb.MovePosition(
+            rb.position +
+            Vector2.up * bulletSpeed * Time.deltaTime
+        );
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
