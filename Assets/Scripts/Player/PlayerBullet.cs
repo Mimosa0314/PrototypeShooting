@@ -4,7 +4,9 @@ public class PlayerBullet : MonoBehaviour
 {
 
     [SerializeField] private GameObject bullet;
-    [SerializeField] private EnemyStatus enemyStatus;
+
+    [SerializeField] private GameObject enemy;
+    private EnemyStatus enemyStatus;
 
     private float bulletSpeed = 5f;
 
@@ -13,7 +15,9 @@ public class PlayerBullet : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
+        enemyStatus = enemy.GetComponent<EnemyStatus>();
+
     }
 
     void Start()
@@ -33,15 +37,19 @@ public class PlayerBullet : MonoBehaviour
         );
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         /*
          * íeÇ™ìGã@Ç…è’ìÀÇµÇΩÇÁåƒÇ—èoÇµ
          */
-        if(collision.gameObject.tag == "enemy")
+        if (collision.gameObject.tag == "enemy")
         {
             enemyStatus.TakeDamage();
+
+            //íeÇè¡ñ≈Ç≥ÇπÇÈ
+            DestroyBullet();
         }
+
     }
 
 
@@ -51,7 +59,11 @@ public class PlayerBullet : MonoBehaviour
      */
     private void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+        DestroyBullet();
     }
 
+    void DestroyBullet()
+    {
+        Destroy(this.gameObject);
+    }
 }
