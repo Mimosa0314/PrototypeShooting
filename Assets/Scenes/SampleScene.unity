@@ -522,7 +522,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -614,6 +614,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2643483563700987772, guid: b79434adecd218b4d9dab89fc48e9c56, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 2090725434}
+    - target: {fileID: 2643483563700987772, guid: b79434adecd218b4d9dab89fc48e9c56, type: 3}
       propertyPath: bullet
       value: 
       objectReference: {fileID: 940072303}
@@ -679,7 +683,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
