@@ -16,7 +16,7 @@ public class PlayerBullet : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        enemyStatus = enemy.GetComponent<EnemyStatus>();
+        
 
     }
 
@@ -39,11 +39,14 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        
         /*
          * ’e‚ª“G‹@‚ÉÕ“Ë‚µ‚½‚çŒÄ‚Ño‚µ
          */
         if (collision.gameObject.tag == "enemy")
         {
+            enemyStatus = enemy.GetComponent<EnemyStatus>();
             enemyStatus.TakeDamage();
 
             //’e‚ğÁ–Å‚³‚¹‚é
