@@ -20,9 +20,12 @@ public class EnemyAttack : MonoBehaviour
     {
         
         //“G‹@‚Æ’¼ÚÚG‚µ‚½ê‡‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é
-        if(collision.gameObject.tag == "player")
+        if(collision.gameObject.tag == "Player")
         {
             PlayerStatus playerStatus = player.GetComponent<PlayerStatus>();
+
+            Debug.Log(playerStatus);
+            playerStatus.TakeDamage();
         }
     }
 }
